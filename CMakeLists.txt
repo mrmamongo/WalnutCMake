@@ -8,7 +8,6 @@ set(Vulkan_INCLUDE_DIRS "C:\\VulkanSDK\\1.3.204.1\\Include")
 set(Vulkan_LIBRARIES "C:\\VulkanSDK\\1.3.204.1\\Lib")
 find_package(Vulkan REQUIRED)
 
-set(GLFW_LIBRARIES "")
 set(GLFW_INCLUDE_DIRS "C:\\GLFW\\include")
 add_library(glfw3 SHARED IMPORTED)
 set_target_properties(glfw3 PROPERTIES IMPORTED_LOCATION "C:\\GLFW\\lib-vc2019\\glfw3.dll")
