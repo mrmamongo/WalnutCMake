@@ -17,7 +17,7 @@ namespace Walnut {
 	{
 	public:
 		Image(std::string_view path);
-		Image(uint32_t width, uint32_t height, ImageFormat format, const void* data = nullptr);
+		Image(uint32_t width, uint32_t height, ImageFormat format, const void* data);
 		~Image();
 
 		void SetData(const void* data);
@@ -31,19 +31,19 @@ namespace Walnut {
 	private:
 		uint32_t m_Width = 0, m_Height = 0;
 
-		VkImage m_Image = nullptr;
-		VkImageView m_ImageView = nullptr;
-		VkDeviceMemory m_Memory = nullptr;
-		VkSampler m_Sampler = nullptr;
+		VkImage m_Image;
+		VkImageView m_ImageView;
+		VkDeviceMemory m_Memory;
+		VkSampler m_Sampler;
 
 		ImageFormat m_Format = ImageFormat::None;
 
-		VkBuffer m_StagingBuffer = nullptr;
-		VkDeviceMemory m_StagingBufferMemory = nullptr;
+		VkBuffer m_StagingBuffer;
+		VkDeviceMemory m_StagingBufferMemory;
 
 		size_t m_AlignedSize = 0;
 
-		VkDescriptorSet m_DescriptorSet = nullptr;
+		VkDescriptorSet m_DescriptorSet;
 
 		std::string m_Filepath;
 	};
